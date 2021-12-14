@@ -1,15 +1,17 @@
 import * as fs from 'fs';
 import _ from 'lodash';
+import path from 'path';
 
-const getObjectFromFile = (filepath) => {
-  const string = fs.readFileSync(filepath);
-  const object = JSON.parse(string, 'utf8');
-  return object;
+const getDataFromFile = (filepath) => {
+  const absolutePath = path.resolve(filepath);
+  const file = fs.readFileSync(absolutePath);
+  const data = JSON.parse(file, 'utf8');
+  return data;
 };
 
 const genDiff = (filepath1, filepath2) => {
-  const object1 = getObjectFromFile(filepath1);
-  const object2 = getObjectFromFile(filepath2);
+  const object1 = getDataFromFile(filepath1);
+  const object2 = getDataFromFile(filepath2);
   const keys = _.sortBy(_.union(_.keys(object1), _.keys(object2)));
   const result = [];
 
