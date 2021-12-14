@@ -14,8 +14,7 @@ const genDiff = (filepath1, filepath2) => {
   const object2 = getDataFromFile(filepath2);
   const keys = _.sortBy(_.union(_.keys(object1), _.keys(object2)));
   const result = [];
-
-  for (const key of keys) {
+  keys.map((key) => {
     const value1 = object1[key];
     const value2 = object2[key];
     if (_.has(object1, key) && _.has(object2, key)) {
@@ -25,13 +24,13 @@ const genDiff = (filepath1, filepath2) => {
         result.push(` - ${key}: ${value1}`);
         result.push(` + ${key}: ${value2}`);
       }
-    } else if (_.has(object1, key) && !_.has(object2, key)){
+    } else if (_.has(object1, key) && !_.has(object2, key)) {
       result.push(` - ${key}: ${value1}`);
     } else if (!_.has(object1, key) && _.has(object2, key)) {
       result.push(` + ${key}: ${value2}`);
     }
-    
-  }
+    return result;
+  });
   return `{\n${result.join('\n')}\n}`;
 };
 
