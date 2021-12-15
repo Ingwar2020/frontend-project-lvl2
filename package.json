@@ -1,8 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": " educational project",
-  "type": "module",
+  "description": "educational project",
   "main": "src/index.js",
   "bin": {
     "gendiff": "bin/gendiff.js"
@@ -19,6 +18,7 @@
   "bugs": {
     "url": "https://github.com/Ingwar2020/frontend-project-lvl2/issues"
   },
+  "type": "module",
   "homepage": "https://github.com/Ingwar2020/frontend-project-lvl2#readme",
   "dependencies": {
     "commander": "^8.3.0",

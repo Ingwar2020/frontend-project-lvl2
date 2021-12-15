@@ -1,5 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Ingwar2020/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Ingwar2020/frontend-project-lvl2/actions)
+[![Tests](https://github.com/Ingwar2020/frontend-project-lvl2/actions/workflows/tests.yml/badge.svg)](https://github.com/Ingwar2020/frontend-project-lvl2/tests.yml/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8b844be5df31a6fc8a2d/maintainability)](https://codeclimate.com/github/Ingwar2020/frontend-project-lvl2/maintainability)
 
 #### Help & Run
 To get information: ```gendiff -h```
