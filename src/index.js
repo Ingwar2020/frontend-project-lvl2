@@ -10,6 +10,9 @@ const getDataFromFile = (filepath) => {
 };
 
 const genDiff = (filepath1, filepath2) => {
+  if (!(fs.existsSync(filepath1) && fs.existsSync(filepath2))) {
+    return 'Please check if paths are correct';
+  }
   const object1 = getDataFromFile(filepath1);
   const object2 = getDataFromFile(filepath2);
   const keys = _.sortBy(_.union(_.keys(object1), _.keys(object2)));
