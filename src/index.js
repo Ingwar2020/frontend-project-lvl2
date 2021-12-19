@@ -1,13 +1,6 @@
 import * as fs from 'fs';
 import _ from 'lodash';
-import path from 'path';
-
-const getDataFromFile = (filepath) => {
-  const absolutePath = path.resolve(filepath);
-  const file = fs.readFileSync(absolutePath);
-  const data = JSON.parse(file, 'utf8');
-  return data;
-};
+import getDataFromFile from './parsers.js';
 
 const genDiff = (filepath1, filepath2) => {
   if (!(fs.existsSync(filepath1) && fs.existsSync(filepath2))) {
