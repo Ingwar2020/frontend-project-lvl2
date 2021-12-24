@@ -1,13 +1,21 @@
 import * as fs from 'fs';
 import _ from 'lodash';
-import getDataFromFile from './parsers.js';
+import path from 'path';
+import parse from './parsers.js';
+
+const getData = (filepath) => {
+  const absolutePath = path.resolve(filepath);
+  const data = fs.readFileSync(absolutePath, 'utf8');
+  return data;
+};
 
 const genDiff = (filepath1, filepath2) => {
   if (!(fs.existsSync(filepath1) && fs.existsSync(filepath2))) {
     return 'Please check if paths are correct';
   }
-  const object1 = getDataFromFile(filepath1);
-  const object2 = getDataFromFile(filepath2);
+
+  const object1 = parse(getData(filepath1), path.extname(filepath1));
+  const object2 = parse(getData(filepath2), path.extname(filepath2));
   const keys = _.sortBy(_.union(_.keys(object1), _.keys(object2)));
   const result = [];
   keys.map((key) => {

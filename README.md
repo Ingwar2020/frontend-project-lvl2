@@ -7,4 +7,4 @@
 #### Help & Run
 To get information: ```gendiff -h```
 To run program: ```gendiff <filepath1> <filepath2>```
-[![asciicast](https://asciinema.org/a/WdqUWlFfawjb5Owbqm4GVspdQ.svg)](https://asciinema.org/a/WdqUWlFfawjb5Owbqm4GVspdQ)
+[![asciicast](https://asciinema.org/a/aBkWeJ0nmZZUujlacd5XkUxT8.svg)](https://asciinema.org/a/aBkWeJ0nmZZUujlacd5XkUxT8)

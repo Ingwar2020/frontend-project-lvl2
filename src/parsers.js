@@ -1,19 +1,11 @@
-import * as fs from 'fs';
-import path from 'path';
+import yaml from 'js-yaml';
 
-const getDataFromFile = (filepath) => {
-  const absolutePath = path.resolve(filepath);
-  const format = path.extname(absolutePath);
-  const data = fs.readFileSync(absolutePath);
-  // const parse = JSON.parse(data, 'utf8');
-
-  let parse;
+export default (data, format) => {
+  let parser;
   if (format === '.json') {
-    parse = JSON.parse;
-  } else if (format === '.yml') {
-    parse = yaml.safeLoad;
+    parser = JSON.parse;
+  } else if (format === '.yml' || format === '.yaml') {
+    parser = yaml.load;
   }
-  return parse(data);
+  return parser(data);
 };
-
-export default getDataFromFile;
